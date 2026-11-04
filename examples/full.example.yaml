@@ -1,0 +1,438 @@
+schema_version: 1
+app:
+  id: mobile-suite
+  default_locale: en-US
+  paid: false
+publication:
+  submit_for_review: false
+  screenshot_plans:
+    - platform: ios
+      device: YOUR_SIMULATOR_UDID
+      scenes:
+        - name: home
+          url: exampleapp://screens/home
+          output: assets/en-US/ios/home.png
+          delay_seconds: 2
+          actions:
+            - kind: wait
+              seconds: 0.5
+        - name: library
+          url: exampleapp://screens/library
+          output: assets/en-US/ios/library.png
+          delay_seconds: 2
+    - platform: ios
+      driver: idb
+      device: YOUR_IDB_TARGET_UDID
+      scenes:
+        - name: duo-open
+          url: exampleapp://screens/duo
+          output: assets/en-US/ios/duo-open.png
+          delay_seconds: 1
+          actions:
+            - kind: hinge
+              angle: 180
+            - kind: wait_element
+              value: subscription-action
+            - kind: tap_element
+              value: subscription-action
+            - kind: swipe
+              x: 500
+              y: 900
+              end_x: 500
+              end_y: 200
+              duration_ms: 600
+    - platform: tvos
+      driver: idb
+      device: YOUR_APPLE_TV_SIMULATOR_UDID
+      scenes:
+        - name: tv-home
+          url: exampleapp://screens/home
+          output: assets/en-US/tvos/home.png
+          actions:
+            - kind: remote
+              value: down
+            - kind: remote
+              value: select
+    - platform: android
+      device: YOUR_ADB_SERIAL
+      scenes:
+        - name: home
+          url: exampleapp://screens/home
+          output: assets/en-US/android/home.png
+          actions:
+            - kind: tap
+              x: 300
+              y: 400
+            - kind: wait
+              seconds: 1
+  screenshot_designs:
+    - source: assets/en-US/ios/home.png
+      output: assets/en-US/ios/store-home.png
+      font: assets/fonts/Inter-Bold.ttf
+      title: All your content in one place
+      width: 1320
+      height: 2868
+      background: "#101820"
+      foreground: "#FFFFFF"
+      padding: 96
+      font_size: 64
+apple:
+  confirm_asset_replacement: false
+  app_id: "1234567890"
+  bundle_id: com.example.mobile
+  key_id_env: APP_STORE_KEY_ID
+  issuer_id_env: APP_STORE_ISSUER_ID
+  private_key_path_env: APP_STORE_KEY_PATH
+  verify_paid: false
+  review_replies:
+    - review_id: APPLE_CUSTOMER_REVIEW_RESOURCE_ID
+      text: Thank you for your feedback.
+      confirm_publication: false
+  beta_groups:
+    - name: External Preview
+      internal: false
+      public_link_enabled: false
+      public_link_limit: 500
+      feedback_enabled: true
+      testers:
+        - email: preview@example.com
+          first_name: Preview
+          last_name: Tester
+          invite: false
+  signing:
+    devices:
+      - name: Development iPhone
+        udid: DEVICE_UDID_REGISTERED_IN_APPLE_DEVELOPER
+        platform: IOS
+    issuance:
+      - certificate_type: DISTRIBUTION
+        common_name: Mobile Suite Distribution
+        email_address: release@example.com
+        private_key_output: signing/new-distribution.key
+        csr_output: signing/new-distribution.csr
+        certificate_output: signing/new-distribution.cer
+        password_env: APP_PUBLISHER_CERT_PASSWORD
+        confirm_creation: false
+    certificates:
+      - certificate_id: APPLE_CERTIFICATE_RESOURCE_ID
+        output: signing/distribution.cer
+    profiles:
+      - name: Mobile Suite App Store
+        profile_type: IOS_APP_STORE
+        certificate_ids:
+          - APPLE_CERTIFICATE_RESOURCE_ID
+        output: signing/mobile-suite.mobileprovision
+        create_if_missing: false
+  accessibility:
+    - device_family: IPHONE
+      voiceover: true
+      captions: true
+      sufficient_contrast: true
+      publish: false
+  verify_base_territory: USA
+  territory_expectations:
+    USA: true
+  privacy_manifest:
+    output: Sources/PrivacyInfo.xcprivacy
+    tracking: false
+    tracking_domains: []
+    collected_data:
+      - data_type: NSPrivacyCollectedDataTypeEmailAddress
+        linked: true
+        tracking: false
+        purposes:
+          - NSPrivacyCollectedDataTypePurposeAppFunctionality
+    accessed_apis:
+      - category: NSPrivacyAccessedAPICategoryUserDefaults
+        reasons: [CA92.1]
+  pricing:
+    base_territory: USA
+    confirm_price_changes: false
+    prices:
+      - price_point_id: PRICE_POINT_ID_FROM_APP_STORE_CONNECT
+        start_date: '2026-12-01'
+  preorder_territory_availability:
+    USA: true
+  confirm_subscription_price_changes: false
+  subscription_groups:
+    - reference_name: Premium
+      localizations:
+        en-US: Premium Subscription
+        pt-BR: Assinatura Premium
+      subscriptions:
+        - product_id: premium_monthly
+          name: Premium Monthly
+          period: ONE_MONTH
+          group_level: 1
+          family_sharable: false
+          review_note: Unlocks premium access.
+          localizations:
+            en-US:
+              name: Premium
+              description: Access premium content.
+            pt-BR:
+              name: Premium
+              description: Acesso a conteúdo premium.
+          prices:
+            - price_point_id: SUBSCRIPTION_PRICE_POINT_ID_FROM_APP_STORE_CONNECT
+              start_date: '2026-12-01'
+          introductory_offers:
+            - territory: USA
+              start_date: '2026-12-01'
+              end_date: '2027-01-31'
+              duration: ONE_MONTH
+              number_of_periods: 1
+              offer_mode: FREE_TRIAL
+              price_point_id: APPLE_INTRO_PRICE_POINT_ID
+          offer_codes:
+            - name: Winter Deal
+              duration: ONE_MONTH
+              number_of_periods: 1
+              offer_mode: PAY_UP_FRONT
+              customer_eligibilities:
+                - NEW
+              offer_eligibility: STACK_WITH_INTRO_OFFERS
+              price_point_ids:
+                - APPLE_OFFER_CODE_PRICE_POINT_ID
+              custom_code_batches:
+                - custom_code: WELCOME2026
+                  number_of_codes: 100
+                  expiration_date: '2026-12-31'
+                  confirm_creation: false
+              one_time_code_batches:
+                - number_of_codes: 500
+                  expiration_date: '2026-12-31'
+                  environment: SANDBOX
+                  confirm_creation: false
+          promotional_offers:
+            - name: Return and Save
+              duration: ONE_MONTH
+              number_of_periods: 1
+              offer_mode: PAY_UP_FRONT
+              price_point_ids:
+                - APPLE_PROMOTIONAL_PRICE_POINT_ID
+          win_back_offers:
+            - reference_name: Welcome Back
+              offer_id: welcome-back
+              duration: ONE_MONTH
+              offer_mode: PAY_UP_FRONT
+              period_count: 1
+              start_date: '2026-12-01'
+              end_date: '2027-01-31'
+              priority: HIGH
+              promotion_intent: USE_AUTO_GENERATED_ASSETS
+              price_point_ids:
+                - APPLE_WINBACK_PRICE_POINT_ID
+  in_app_purchases:
+    - product_id: lifetime_unlock
+      name: Lifetime Unlock
+      purchase_type: NON_CONSUMABLE
+      review_note: Unlocks the full catalog.
+      available_in_all_territories: true
+      localizations:
+        en-US:
+          name: Lifetime Unlock
+          description: Unlock all content.
+        pt-BR:
+          name: Acesso Vitalício
+          description: Desbloqueie todo o conteúdo.
+  categories:
+    primaryCategory: LIFESTYLE
+  age_rating:
+    advertising: false
+    gambling: false
+  review:
+    contact_first_name: Developer
+    contact_last_name: Support
+    contact_email: review@example.com
+    contact_phone: "+15555550100"
+    demo_account_required: true
+    demo_account_name_env: DEMO_ACCOUNT_USERNAME
+    demo_account_password_env: DEMO_ACCOUNT_PASSWORD
+    notes: Use the supplied sandbox account.
+    attachments:
+      - path: screenshots/review/feature-guide.pdf
+        confirm_replacement: false
+        timeout_seconds: 300
+  versions:
+    - platform: IOS
+      version: "2.0.0"
+      phased_release: false
+      manual_release: false
+      build_number: "42"
+      artifact: dist/ios/App.ipa
+      build:
+        workspace: App.xcworkspace
+        scheme: App
+        configuration: Release
+        destination: generic/platform=iOS
+        archive_path: build/App.xcarchive
+        export_path: dist/ios
+        export_options: build/ExportOptions.plist
+      beta:
+        group_ids:
+          - beta-group-id
+    - platform: MAC_OS
+      version: "2.0.0"
+      build_number: "42"
+      artifact: dist/macos/App.pkg
+    - platform: TV_OS
+      version: "2.0.0"
+    - platform: VISION_OS
+      version: "2.0.0"
+google:
+  package_name: com.example.mobile
+  confirm_image_replacement: false
+  review_replies:
+    - review_id: GOOGLE_REVIEW_ID
+      text: Thank you for your feedback.
+      confirm_publication: false
+  listing_deletions:
+    - locale: fr-FR
+      confirm_deletion: false
+  country_expectations:
+    - track: production
+      countries: [BR, US]
+      sync_with_production: false
+      rest_of_world: false
+  store_details:
+    default_language: en-US
+    contact_website: https://example.com
+    contact_email: support@example.com
+    contact_phone: "+15555550100"
+  data_safety_csv: policies/data-safety.csv
+  tester_groups:
+    - track: internal
+      google_groups:
+        - qa-team@example.com
+  release:
+    track: internal
+    confirm_track_replacement: false
+    status: draft
+    name: October release
+    in_app_update_priority: 3
+    artifact: dist/android/app-release.aab
+    deobfuscation_files:
+      - version_code: 42
+        file_type: proguard
+        path: dist/android/mapping.txt
+      - version_code: 42
+        file_type: nativeCode
+        path: dist/android/native-symbols.zip
+    build:
+      gradle_wrapper: gradlew
+      task: :app:bundleRelease
+      artifact: dist/android/app-release.aab
+  subscriptions:
+    - product_id: premium
+      regions_version: "2026/10"
+      update_mask:
+        - listings
+      data:
+        listings:
+          - languageCode: en-US
+            title: Premium
+            description: Premium features.
+  subscription_offers:
+    - product_id: premium
+      base_plan_id: monthly
+      offer_id: introductory
+      regions_version: '2026/10'
+      update_mask:
+        - phases
+      state: DRAFT
+      data:
+        phases: []
+  base_plan_states:
+    - product_id: premium
+      base_plan_id: monthly
+      state: ACTIVE
+  one_time_offers:
+    - product_id: unlock
+      purchase_option_id: buy
+      offer_id: welcome-deal
+      regions_version: "2026/10"
+      update_mask:
+        - offerTags
+      state: DRAFT
+      data:
+        offerTags:
+          - tag: welcome
+  purchase_option_states:
+    - product_id: unlock
+      purchase_option_id: buy
+      state: ACTIVE
+  purchase_option_deletions: []
+  one_time_offer_deletions: []
+  subscription_offer_deletions: []
+  one_time_products:
+    - product_id: unlock
+      regions_version: "2026/10"
+      update_mask:
+        - listings
+      data:
+        listings:
+          - languageCode: en-US
+            title: Lifetime unlock
+firebase:
+  project_id: example-mobile-suite
+  create_if_missing: true
+  apple_apps:
+    - identifier: com.example.mobile
+      output: firebase/ios/GoogleService-Info.plist
+    - identifier: com.example.mobile.tv
+      output: firebase/tvos/GoogleService-Info.plist
+  android_apps:
+    - identifier: com.example.mobile
+      output: firebase/android/google-services.json
+      sha_certificates:
+        - sha_hash: "AA:BB:CC:DD:EE:FF:00:11:22:33:44:55:66:77:88:99:AA:BB:CC:DD"
+          certificate_type: SHA_1
+locales:
+  en-US:
+    common:
+      name: Example App
+      description: An example application with multiple platforms.
+      release_notes: Improvements and bug fixes.
+    apple:
+      subtitle: All your content
+      promotional_text: Discover a better experience.
+      keywords: content,library,example
+      support_url: https://example.com/support
+      privacy_policy_url: https://example.com/privacy
+      app_previews:
+        IPHONE_67:
+          - assets/en-US/ios/preview-01.mp4
+      preview_frame_timecode: "00:00:03:00"
+      screenshots:
+        IPHONE_67:
+          - assets/en-US/ios/store-home.png
+        IPHONE_DUO:
+          - assets/en-US/ios/duo/*.png
+        IPAD_PRO_3GEN_129:
+          - assets/en-US/ipad/*.png
+    google:
+      short_description: Discover your content.
+      images:
+        phoneScreenshots:
+          - assets/en-US/android/*.png
+        featureGraphic:
+          - assets/en-US/android/feature.png
+        tvScreenshots:
+          - assets/en-US/tv/*.png
+  pt-BR:
+    common:
+      name: App Exemplo
+      description: Um exemplo de aplicativo para várias plataformas.
+      release_notes: Melhorias e correções.
+    apple:
+      subtitle: Seu conteúdo em um lugar
+      keywords: conteudo,biblioteca,exemplo
+      screenshots:
+        IPHONE_67:
+          - assets/pt-BR/ios/*.png
+    google:
+      short_description: Descubra seu conteúdo.
+      images:
+        phoneScreenshots:
+          - assets/pt-BR/android/*.png

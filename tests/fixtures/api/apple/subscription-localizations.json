@@ -1,0 +1,52 @@
+{
+  "status_code": 200,
+  "body": {
+    "data": [
+      {
+        "type": "subscriptionLocalizations",
+        "id": "subscriptionLocalizations-1",
+        "attributes": {
+          "name": "example Plus Mensual",
+          "locale": "es-ES",
+          "description": "Example subscription features."
+        },
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v2/subscriptionLocalizations/subscriptionLocalizations-1"
+        }
+      },
+      {
+        "type": "subscriptionLocalizations",
+        "id": "subscriptionLocalizations-2",
+        "attributes": {
+          "name": "example Plus Mensal",
+          "locale": "pt-BR",
+          "description": "Example subscription features."
+        },
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v2/subscriptionLocalizations/subscriptionLocalizations-2"
+        }
+      },
+      {
+        "type": "subscriptionLocalizations",
+        "id": "subscriptionLocalizations-3",
+        "attributes": {
+          "name": "example Plus Monthly",
+          "locale": "en-US",
+          "description": "Example subscription features."
+        },
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v2/subscriptionLocalizations/subscriptionLocalizations-3"
+        }
+      }
+    ],
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/subscriptionVersions/subscriptionVersions-1/localizations"
+    },
+    "meta": {
+      "paging": {
+        "total": 3,
+        "limit": 200
+      }
+    }
+  }
+}

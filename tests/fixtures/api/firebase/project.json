@@ -1,0 +1,38 @@
+{
+  "status_code": 403,
+  "body": {
+    "error": {
+      "code": 403,
+      "message": "Firebase Management API has not been used in project 123456789 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firebase.googleapis.com/overview?[REDACTED QUERY] then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+      "status": "PERMISSION_DENIED",
+      "details": [
+        {
+          "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+          "reason": "SERVICE_DISABLED",
+          "domain": "googleapis.com",
+          "metadata": {
+            "service": "firebase.googleapis.com",
+            "activationUrl": "https://assets.example.invalid/example",
+            "containerInfo": "123456789",
+            "consumer": "projects/123456789",
+            "serviceTitle": "Firebase Management API"
+          }
+        },
+        {
+          "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+          "locale": "en-US",
+          "message": "Firebase Management API has not been used in project 123456789 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/firebase.googleapis.com/overview?[REDACTED QUERY] then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+        },
+        {
+          "@type": "type.googleapis.com/google.rpc.Help",
+          "links": [
+            {
+              "description": "Example subscription features.",
+              "url": "https://assets.example.invalid/example"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "status_code": 200,
+  "body": {
+    "data": [
+      {
+        "type": "subscriptionVersions",
+        "id": "subscriptionVersions-1",
+        "attributes": {
+          "version": 1,
+          "state": "PREPARE_FOR_SUBMISSION"
+        },
+        "relationships": {
+          "image": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/subscriptionVersions/subscriptionVersions-1/relationships/image",
+              "related": "https://api.appstoreconnect.apple.com/v1/subscriptionVersions/subscriptionVersions-1/image"
+            }
+          },
+          "images": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/subscriptionVersions/subscriptionVersions-1/relationships/images",
+              "related": "https://api.appstoreconnect.apple.com/v1/subscriptionVersions/subscriptionVersions-1/images"
+            }
+          },
+          "localizations": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/subscriptionVersions/subscriptionVersions-1/relationships/localizations",
+              "related": "https://api.appstoreconnect.apple.com/v1/subscriptionVersions/subscriptionVersions-1/localizations"
+            }
+          }
+        },
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/subscriptionVersions/subscriptionVersions-1"
+        }
+      }
+    ],
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/subscriptions/subscription-monthly/versions"
+    },
+    "meta": {
+      "paging": {
+        "total": 1,
+        "limit": 200
+      }
+    }
+  }
+}

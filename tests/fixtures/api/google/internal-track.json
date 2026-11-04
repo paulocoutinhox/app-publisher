@@ -1,0 +1,29 @@
+{
+  "status_code": 200,
+  "body": {
+    "track": "internal",
+    "releases": [
+      {
+        "name": "example 1.0.0 (7) internal",
+        "versionCodes": [
+          "7"
+        ],
+        "releaseNotes": [
+          {
+            "language": "en-US",
+            "text": "Example subscription features."
+          },
+          {
+            "language": "pt-BR",
+            "text": "Example subscription features."
+          },
+          {
+            "language": "es-ES",
+            "text": "Example subscription features."
+          }
+        ],
+        "status": "completed"
+      }
+    ]
+  }
+}

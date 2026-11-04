@@ -1,0 +1,33 @@
+{
+  "status_code": 200,
+  "body": {
+    "data": {
+      "type": "preReleaseVersions",
+      "id": "preReleaseVersions-1",
+      "attributes": {
+        "version": "1.0.0",
+        "platform": "IOS"
+      },
+      "relationships": {
+        "builds": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/preReleaseVersions-1/relationships/builds",
+            "related": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/preReleaseVersions-1/builds"
+          }
+        },
+        "app": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/preReleaseVersions-1/relationships/app",
+            "related": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/preReleaseVersions-1/app"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/preReleaseVersions-1"
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/preReleaseVersion"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "status_code": 200,
+  "body": {
+    "data": [
+      {
+        "type": "builds",
+        "id": "builds-1",
+        "attributes": {
+          "version": "7",
+          "uploadedDate": "2026-11-04T11:59:28-08:00",
+          "expirationDate": "2027-02-02T11:59:28-08:00",
+          "expired": false,
+          "minOsVersion": "16.3",
+          "lsMinimumSystemVersion": null,
+          "computedMinMacOsVersion": "13.2",
+          "computedMinVisionOsVersion": "1.0",
+          "iconAssetToken": "REDACTED",
+          "processingState": "VALID",
+          "buildAudienceType": "APP_STORE_ELIGIBLE",
+          "usesNonExemptEncryption": false
+        },
+        "relationships": {
+          "preReleaseVersion": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/relationships/preReleaseVersion",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/preReleaseVersion"
+            }
+          },
+          "individualTesters": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/relationships/individualTesters",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/individualTesters"
+            }
+          },
+          "betaGroups": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/relationships/betaGroups"
+            }
+          },
+          "betaBuildLocalizations": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/relationships/betaBuildLocalizations",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/betaBuildLocalizations"
+            }
+          },
+          "appEncryptionDeclaration": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/relationships/appEncryptionDeclaration",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/appEncryptionDeclaration"
+            }
+          },
+          "betaAppReviewSubmission": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/relationships/betaAppReviewSubmission",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/betaAppReviewSubmission"
+            }
+          },
+          "app": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/relationships/app",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/app"
+            }
+          },
+          "buildBetaDetail": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/relationships/buildBetaDetail",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/buildBetaDetail"
+            }
+          },
+          "appStoreVersion": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/relationships/appStoreVersion",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/appStoreVersion"
+            }
+          },
+          "icons": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/relationships/icons",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/icons"
+            }
+          },
+          "perfPowerMetrics": {
+            "links": {
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/builds-1/perfPowerMetrics"
+            }
+          },
+          "diagnosticSignatures": "REDACTED"
+        },
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/builds/builds-1"
+        }
+      }
+    ],
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/builds"
+    },
+    "meta": {
+      "paging": {
+        "total": 1,
+        "limit": 200
+      }
+    }
+  }
+}

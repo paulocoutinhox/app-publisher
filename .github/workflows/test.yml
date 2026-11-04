@@ -1,0 +1,46 @@
+name: Test
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      include-macos:
+        description: Include hosted macOS checks when runners are available.
+        type: boolean
+        default: false
+  workflow_call:
+    inputs:
+      include-macos:
+        type: boolean
+        default: false
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ${{ fromJSON(inputs.include-macos && '["ubuntu-latest","windows-latest","macos-15-intel"]' || '["ubuntu-latest","windows-latest"]') }}
+        python: ["3.11", "3.13", "3.14"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: ${{ matrix.python }}
+          enable-cache: true
+      - run: uv sync --frozen --extra dev
+      - run: uv run --extra dev ruff check .
+      - run: uv run --extra dev ruff format --check .
+      - run: uv run --extra dev pytest --cov=app_publisher --cov-branch --cov-report=term-missing --cov-report=xml
+      - run: uv build
+      - run: uv run --extra dev twine check dist/*
+      - uses: actions/upload-artifact@v4
+        if: matrix.os == 'ubuntu-latest' && matrix.python == '3.13'
+        with:
+          name: distribution
+          path: dist/

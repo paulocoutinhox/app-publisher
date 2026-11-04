@@ -1,0 +1,8 @@
+{
+  "status_code": 200,
+  "body": {
+    "defaultLanguage": "en-US",
+    "contactWebsite": "https://assets.example.invalid/example",
+    "contactEmail": "person@example.invalid"
+  }
+}

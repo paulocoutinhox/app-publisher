@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 164 160" role="img" aria-labelledby="title">
+<title id="title">App Publisher</title>
+<g>
+  <rect x="0" y="20" width="128" height="128" rx="32" fill="#23C7B5"/>
+  <rect x="24" y="0" width="128" height="128" rx="32" fill="#7954EC"/>
+  <path d="M62 88 112 38M80 38h32v32" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

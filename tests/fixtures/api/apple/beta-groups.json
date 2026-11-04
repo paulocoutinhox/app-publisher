@@ -1,0 +1,69 @@
+{
+  "status_code": 200,
+  "body": {
+    "data": [
+      {
+        "type": "betaGroups",
+        "id": "betaGroups-1",
+        "attributes": {
+          "name": "Interno",
+          "createdDate": "2026-11-04T19:32:23.667Z",
+          "isInternalGroup": true,
+          "hasAccessToAllBuilds": true,
+          "publicLinkEnabled": null,
+          "publicLinkId": null,
+          "publicLinkLimitEnabled": null,
+          "publicLinkLimit": null,
+          "publicLink": null,
+          "feedbackEnabled": true,
+          "iosBuildsAvailableForAppleSiliconMac": true,
+          "iosBuildsAvailableForAppleVision": true
+        },
+        "relationships": {
+          "app": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/betaGroups/betaGroups-1/relationships/app",
+              "related": "https://api.appstoreconnect.apple.com/v1/betaGroups/betaGroups-1/app"
+            }
+          },
+          "builds": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/betaGroups/betaGroups-1/relationships/builds",
+              "related": "https://api.appstoreconnect.apple.com/v1/betaGroups/betaGroups-1/builds"
+            }
+          },
+          "betaTesters": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/betaGroups/betaGroups-1/relationships/betaTesters",
+              "related": "https://api.appstoreconnect.apple.com/v1/betaGroups/betaGroups-1/betaTesters"
+            }
+          },
+          "betaRecruitmentCriteria": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/betaGroups/betaGroups-1/relationships/betaRecruitmentCriteria",
+              "related": "https://api.appstoreconnect.apple.com/v1/betaGroups/betaGroups-1/betaRecruitmentCriteria"
+            }
+          },
+          "betaRecruitmentCriterionCompatibleBuildCheck": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/betaGroups/betaGroups-1/relationships/betaRecruitmentCriterionCompatibleBuildCheck",
+              "related": "https://api.appstoreconnect.apple.com/v1/betaGroups/betaGroups-1/betaRecruitmentCriterionCompatibleBuildCheck"
+            }
+          }
+        },
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/betaGroups/betaGroups-1"
+        }
+      }
+    ],
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/apps/123/betaGroups"
+    },
+    "meta": {
+      "paging": {
+        "total": 1,
+        "limit": 200
+      }
+    }
+  }
+}

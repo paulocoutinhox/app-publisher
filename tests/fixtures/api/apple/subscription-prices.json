@@ -1,0 +1,63 @@
+{
+  "status_code": 200,
+  "body": {
+    "data": [
+      {
+        "type": "subscriptionPrices",
+        "id": "subscriptionPrices-1",
+        "attributes": {
+          "startDate": null,
+          "preserved": false,
+          "planType": "UPFRONT"
+        },
+        "relationships": {
+          "subscriptionPricePoint": {
+            "data": {
+              "type": "subscriptionPricePoints",
+              "id": "subscriptionPricePoints-1"
+            }
+          }
+        },
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/subscriptionPrices/subscriptionPrices-1"
+        }
+      }
+    ],
+    "included": [
+      {
+        "type": "subscriptionPricePoints",
+        "id": "subscriptionPricePoints-1",
+        "attributes": {
+          "customerPrice": "4.99",
+          "proceeds": "4.99",
+          "proceedsYear2": "4.99"
+        },
+        "relationships": {
+          "equalizations": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/subscriptionPricePoints/subscriptionPricePoints-1/relationships/equalizations",
+              "related": "https://api.appstoreconnect.apple.com/v1/subscriptionPricePoints/subscriptionPricePoints-1/equalizations"
+            }
+          },
+          "adjustedEqualizations": {
+            "links": {
+              "related": "https://api.appstoreconnect.apple.com/v1/subscriptionPricePoints/subscriptionPricePoints-1/adjustedEqualizations"
+            }
+          }
+        },
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/subscriptionPricePoints/subscriptionPricePoints-1"
+        }
+      }
+    ],
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/subscriptions/subscription-monthly/prices"
+    },
+    "meta": {
+      "paging": {
+        "total": 1,
+        "limit": 200
+      }
+    }
+  }
+}

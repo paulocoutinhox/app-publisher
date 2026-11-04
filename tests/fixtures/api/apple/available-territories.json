@@ -1,0 +1,26 @@
+{
+  "status_code": 200,
+  "body": {
+    "data": [
+      {
+        "type": "territories",
+        "id": "BRA",
+        "attributes": {
+          "currency": "BRL"
+        },
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/territories/BRA"
+        }
+      }
+    ],
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/subscriptionPlanAvailabilities/subscriptionPlanAvailabilities-1/availableTerritories"
+    },
+    "meta": {
+      "paging": {
+        "total": 1,
+        "limit": 200
+      }
+    }
+  }
+}

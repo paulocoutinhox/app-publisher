@@ -1,0 +1,46 @@
+{
+  "status_code": 200,
+  "body": {
+    "data": {
+      "type": "subscriptionAppStoreReviewScreenshots",
+      "id": "subscriptionAppStoreReviewScreenshots-1",
+      "attributes": {
+        "fileSize": 349813,
+        "fileName": "review-0123456789abcdef0123456789abcdef.png",
+        "sourceFileChecksum": "0123456789abcdef0123456789abcdef",
+        "imageAsset": {
+          "templateUrl": "",
+          "width": 0,
+          "height": 0
+        },
+        "assetToken": "REDACTED",
+        "assetType": "SCREENSHOT",
+        "uploadOperations": [
+          {
+            "method": "PUT",
+            "url": "https://assets.example.invalid/example",
+            "length": 349813,
+            "offset": 0,
+            "requestHeaders": [
+              {
+                "name": "Content-Type",
+                "value": "image/png"
+              }
+            ]
+          }
+        ],
+        "assetDeliveryState": {
+          "errors": null,
+          "warnings": null,
+          "state": "UPLOAD_COMPLETE"
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/subscriptionAppStoreReviewScreenshots/subscriptionAppStoreReviewScreenshots-1"
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/subscriptions/subscription-monthly/appStoreReviewScreenshot"
+    }
+  }
+}

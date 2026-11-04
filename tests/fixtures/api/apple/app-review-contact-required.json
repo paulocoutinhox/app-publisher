@@ -1,0 +1,57 @@
+{
+  "status_code": 409,
+  "body": {
+    "errors": [
+      {
+        "id": "example-error-1",
+        "status": "409",
+        "code": "ENTITY_ERROR.ATTRIBUTE.REQUIRED",
+        "title": "The provided entity is missing a required attribute",
+        "detail": "You must provide a value for the attribute 'contactFirstName' with this request",
+        "source": {
+          "pointer": "/data/attributes/contactFirstName"
+        }
+      },
+      {
+        "id": "example-error-2",
+        "status": "409",
+        "code": "ENTITY_ERROR.ATTRIBUTE.REQUIRED",
+        "title": "The provided entity is missing a required attribute",
+        "detail": "You must provide a value for the attribute 'contactLastName' with this request",
+        "source": {
+          "pointer": "/data/attributes/contactLastName"
+        }
+      },
+      {
+        "id": "example-error-3",
+        "status": "409",
+        "code": "ENTITY_ERROR.ATTRIBUTE.REQUIRED",
+        "title": "The provided entity is missing a required attribute",
+        "detail": "You must provide a value for the attribute 'contactEmail' with this request",
+        "source": {
+          "pointer": "/data/attributes/contactEmail"
+        }
+      },
+      {
+        "id": "example-error-4",
+        "status": "409",
+        "code": "ENTITY_ERROR.ATTRIBUTE.REQUIRED",
+        "title": "The provided entity is missing a required attribute",
+        "detail": "You must provide a value for the attribute 'contactPhone' with this request",
+        "source": {
+          "pointer": "/data/attributes/contactPhone"
+        }
+      },
+      {
+        "id": "example-error-5",
+        "status": "409",
+        "code": "ENTITY_ERROR.ATTRIBUTE.INVALID",
+        "title": "An attribute value is invalid.",
+        "detail": "The phone number must be in a valid format. Preface the phone number with ‘+’ followed by the country code (for example, +44 844 209 0611)",
+        "source": {
+          "pointer": "/data/attributes/contactPhone"
+        }
+      }
+    ]
+  }
+}

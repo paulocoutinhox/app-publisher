@@ -1,0 +1,26 @@
+{
+  "status_code": 200,
+  "body": {
+    "kind": "androidpublisher#listingsListResponse",
+    "listings": [
+      {
+        "language": "en-US",
+        "title": "example",
+        "fullDescription": "Example application description.",
+        "shortDescription": "Example application summary."
+      },
+      {
+        "language": "pt-BR",
+        "title": "example",
+        "fullDescription": "Example application description.",
+        "shortDescription": "Example application summary."
+      },
+      {
+        "language": "es-ES",
+        "title": "example",
+        "fullDescription": "Example application description.",
+        "shortDescription": "Example application summary."
+      }
+    ]
+  }
+}

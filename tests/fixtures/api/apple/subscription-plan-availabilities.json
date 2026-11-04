@@ -1,0 +1,35 @@
+{
+  "status_code": 200,
+  "body": {
+    "data": [
+      {
+        "type": "subscriptionPlanAvailabilities",
+        "id": "subscriptionPlanAvailabilities-1",
+        "attributes": {
+          "availableInNewTerritories": false,
+          "planType": "UPFRONT"
+        },
+        "relationships": {
+          "availableTerritories": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/subscriptionPlanAvailabilities/subscriptionPlanAvailabilities-1/relationships/availableTerritories",
+              "related": "https://api.appstoreconnect.apple.com/v1/subscriptionPlanAvailabilities/subscriptionPlanAvailabilities-1/availableTerritories"
+            }
+          }
+        },
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/subscriptionPlanAvailabilities/subscriptionPlanAvailabilities-1"
+        }
+      }
+    ],
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/subscriptions/subscription-monthly/planAvailabilities"
+    },
+    "meta": {
+      "paging": {
+        "total": 1,
+        "limit": 200
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "status_code": 200,
+  "body": {
+    "data": [
+      {
+        "type": "appStoreVersions",
+        "id": "appStoreVersions-1",
+        "attributes": {
+          "platform": "IOS",
+          "versionString": "1.0.0",
+          "appVersionState": "PREPARE_FOR_SUBMISSION",
+          "releaseType": "AFTER_APPROVAL",
+          "earliestReleaseDate": null
+        },
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/appStoreVersions-1"
+        }
+      }
+    ],
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/apps/123/appStoreVersions"
+    },
+    "meta": {
+      "paging": {
+        "total": 1,
+        "limit": 200
+      }
+    }
+  }
+}

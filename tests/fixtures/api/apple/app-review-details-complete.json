@@ -1,0 +1,33 @@
+{
+  "status_code": 200,
+  "body": {
+    "data": {
+      "type": "appStoreReviewDetails",
+      "id": "appStoreReviewDetails-1",
+      "attributes": {
+        "contactFirstName": "Example",
+        "contactLastName": "Example",
+        "contactPhone": "+15555550100",
+        "contactEmail": "person@example.invalid",
+        "demoAccountName": null,
+        "demoAccountPassword": null,
+        "demoAccountRequired": false,
+        "notes": "Example reviewer instructions."
+      },
+      "relationships": {
+        "appStoreReviewAttachments": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/appStoreReviewDetails/appStoreReviewDetails-1/relationships/appStoreReviewAttachments",
+            "related": "https://api.appstoreconnect.apple.com/v1/appStoreReviewDetails/appStoreReviewDetails-1/appStoreReviewAttachments"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/appStoreReviewDetails/appStoreReviewDetails-1"
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/appStoreVersions-1/appStoreReviewDetail"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "status_code": 200,
+  "body": {
+    "data": [],
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/apps/123/reviewSubmissions"
+    },
+    "meta": {
+      "paging": {
+        "total": 0,
+        "limit": 200
+      }
+    }
+  }
+}

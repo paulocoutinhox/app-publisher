@@ -1,0 +1,46 @@
+{
+  "status_code": 200,
+  "body": {
+    "data": [
+      {
+        "type": "subscriptionGroups",
+        "id": "group-1",
+        "attributes": {
+          "referenceName": "example Plus"
+        },
+        "relationships": {
+          "subscriptions": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/subscriptionGroups/group-1/relationships/subscriptions",
+              "related": "https://api.appstoreconnect.apple.com/v1/subscriptionGroups/group-1/subscriptions"
+            }
+          },
+          "subscriptionGroupLocalizations": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/subscriptionGroups/group-1/relationships/subscriptionGroupLocalizations",
+              "related": "https://api.appstoreconnect.apple.com/v1/subscriptionGroups/group-1/subscriptionGroupLocalizations"
+            }
+          },
+          "versions": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/subscriptionGroups/group-1/relationships/versions",
+              "related": "https://api.appstoreconnect.apple.com/v1/subscriptionGroups/group-1/versions"
+            }
+          }
+        },
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/subscriptionGroups/group-1"
+        }
+      }
+    ],
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/apps/123/subscriptionGroups"
+    },
+    "meta": {
+      "paging": {
+        "total": 1,
+        "limit": 200
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+schema_version: 1
+app:
+  id: sample
+  default_locale: en-US
+  paid: false
+publication:
+  submit_for_review: false
+apple:
+  app_id: "1234567890"
+  bundle_id: com.example.sample
+  versions:
+    - platform: IOS
+      version: "1.0.0"
+      build_number: "1"
+      release_type: MANUAL
+      # Set an artifact to upload a signed build.
+google:
+  package_name: com.example.sample
+  confirm_image_replacement: false
+  release:
+    track: internal
+    confirm_track_replacement: false
+    status: draft
+    version_codes: ["1"]
+firebase:
+  project_id: example-sample-123
+  create_if_missing: false
+  apple_apps:
+    - identifier: com.example.sample
+      output: config/ios/GoogleService-Info.plist
+  android_apps:
+    - identifier: com.example.sample
+      output: config/android/google-services.json
+locales:
+  en-US:
+    common:
+      name: Example
+      description: A sample description for the store.
+      release_notes: Bug fixes and performance improvements.
+    apple:
+      name: Example
+      subtitle: All in one place
+      keywords: productivity,example
+      support_url: https://example.com/support
+    google:
+      title: Example
+      short_description: Everything you need.
+      full_description: A sample description for the store.
+  pt-BR:
+    common:
+      name: Exemplo
+      description: Um exemplo de descrição para a loja.
+      release_notes: Correções e melhorias de desempenho.
+    apple:
+      name: Exemplo
+      subtitle: Tudo em um só lugar
+      keywords: produtividade,exemplo
+    google:
+      title: Exemplo
+      short_description: Tudo que você precisa.
+      full_description: Um exemplo de descrição para a loja.

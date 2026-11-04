@@ -1,0 +1,51 @@
+{
+  "status_code": 200,
+  "body": {
+    "packageName": "com.example.app",
+    "productId": "example.plus.monthly",
+    "basePlans": [
+      {
+        "basePlanId": "monthly",
+        "regionalConfigs": [
+          {
+            "regionCode": "BR",
+            "newSubscriberAvailability": true,
+            "price": {
+              "currencyCode": "BRL",
+              "units": "4",
+              "nanos": 990000000
+            }
+          }
+        ],
+        "state": "DRAFT",
+        "autoRenewingBasePlanType": {
+          "billingPeriodDuration": "P1M",
+          "gracePeriodDuration": "P7D",
+          "resubscribeState": "RESUBSCRIBE_STATE_ACTIVE",
+          "prorationMode": "SUBSCRIPTION_PRORATION_MODE_CHARGE_ON_NEXT_BILLING_DATE",
+          "legacyCompatibleSubscriptionOfferId": ""
+        }
+      }
+    ],
+    "listings": [
+      {
+        "title": "example Plus Monthly",
+        "languageCode": "en-US",
+        "description": "Example subscription features."
+      },
+      {
+        "title": "example Plus Mensal",
+        "languageCode": "pt-BR",
+        "description": "Example subscription features."
+      },
+      {
+        "title": "example Plus Mensual",
+        "languageCode": "es-ES",
+        "description": "Example subscription features."
+      }
+    ],
+    "taxAndComplianceSettings": {
+      "eeaWithdrawalRightType": "WITHDRAWAL_RIGHT_SERVICE"
+    }
+  }
+}
